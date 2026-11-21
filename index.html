@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f5">
+  <title>Một chút dịu dàng — Nhật ký cảm xúc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#home" aria-label="Về trang hôm nay"><span class="brand-mark">✿</span><span>một chút <i>dịu dàng</i></span></a><nav class="nav" aria-label="Điều hướng"><button class="nav-link active" data-page="home">Hôm nay</button><button class="nav-link" data-page="history">Nhật ký</button></nav><span class="top-note">♡ &nbsp; Góc nhỏ dành cho bạn</span></header>
+  <main>
+    <section id="reminder-banner" class="reminder-banner hidden" aria-live="polite"></section>
+    <section id="home-page" class="page">
+      <div class="hero"><div class="hero-copy"><span class="eyebrow"><span class="sun-dot"></span> MỘT KHOẢNG DỪNG CHO RIÊNG BẠN</span><h1>Chậm lại một chút,<br><em>lắng nghe mình nhé.</em></h1><p class="hero-desc">Không cần phải biết chính xác. Đây chỉ là một góc nhỏ để bạn ghi lại những gì đang ở trong lòng.</p></div><div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-sun"></div><div class="art-leaf leaf-one">✿</div><div class="art-leaf leaf-two">✿</div><span class="art-caption">take it<br>one breath<br>at a time</span></div></div>
+      <div id="step-welcome" class="step-card"><div class="card-kicker">HÔM NAY, <span id="today-label"></span></div><h2>Bạn có nhận ra mình đang<br class="desktop"> cảm thấy thế nào không?</h2><p class="muted">Không có câu trả lời nào là đúng hay sai.</p><div class="choice-row"><button class="choice-button choice-primary" id="know-mood"><span class="choice-icon" data-icon="sun"></span><span><strong>Có, tôi biết</strong><small>Chọn những cảm xúc của bạn</small></span><span class="arrow">↗</span></button><button class="choice-button" id="unsure-mood"><span class="choice-icon" data-icon="cloud"></span><span><strong>Chưa rõ</strong><small>Mình cùng dừng lại một chút nhé</small></span><span class="arrow">↗</span></button></div></div>
+      <div id="step-breath" class="step-card hidden"><button class="back-link" id="breath-back">← Quay lại</button><div class="card-kicker">MỘT KHOẢNG THỞ NHẸ NHÀNG</div><div class="breath-layout"><div class="breath-visual"><div class="breath-halo"></div><div class="breath-circle" id="breath-circle"><span id="breath-cue">sẵn sàng</span></div></div><div class="breath-copy"><h2>Mình cùng thở<br><em>chậm một nhịp nhé.</em></h2><p>Thử hít vào khi vòng tròn nở ra, rồi thở ra khi vòng tròn thu nhỏ lại — theo nhịp bạn thấy thoải mái. Bạn có thể dừng hoặc bỏ qua bất cứ lúc nào.</p><p class="breath-caveat">Bài thực hành này có thể phù hợp hoặc không phù hợp với bạn. Không cần cố bình tĩnh hay tìm ra cảm xúc ngay bây giờ.</p><div class="breath-actions"><button class="button button-dark" id="breath-toggle">Bắt đầu</button><button class="text-button" id="breath-skip">Bỏ qua, chọn cảm xúc</button></div></div></div></div>
+      <div id="step-emotions" class="step-card hidden"><button class="back-link" id="emotions-back">← Quay lại</button><div class="card-kicker">LẮNG NGHE MÌNH</div><h2>Bạn đang cảm thấy<br class="desktop"> <em>như thế nào?</em></h2><p class="muted">Chọn tất cả những gì phù hợp. Cũng có thể chưa xác định.</p><div class="emotion-grid" id="emotion-grid"></div><div id="message-box" class="message-box hidden" aria-live="polite"><span class="message-flower">✿</span><p id="mood-message"></p></div><div class="note-label"><label for="note-input">Một vài dòng cho riêng bạn <span>(không bắt buộc)</span></label><span id="char-count">0</span></div><textarea id="note-input" rows="4" maxlength="1000" placeholder="Bạn muốn lưu lại điều gì về hôm nay?"></textarea><div class="special-box"><div class="special-copy"><span class="special-icon">✧</span><div><strong>Một ngày đặc biệt?</strong><p>Để một lời nhắc dịu dàng tìm đến bạn trong tương lai.</p></div></div><label class="switch"><input id="special-toggle" type="checkbox"><span class="slider"></span><span class="sr-only">Đánh dấu ngày đặc biệt</span></label></div><div id="reminder-options" class="reminder-options hidden"><label class="check-row"><input id="reminder-enabled" type="checkbox" checked><span>Nhắc mình vào ngày <strong id="default-reminder-label"></strong></span></label><label class="date-label" for="reminder-date">Hoặc chọn một ngày khác</label><input id="reminder-date" type="date"></div><div class="save-row"><span class="save-hint">Chỉ lưu trên thiết bị này ♡</span><button class="button button-dark" id="save-entry">Lưu ngày hôm nay <span>↗</span></button></div></div>
+    </section>
+    <section id="history-page" class="page hidden"><div class="history-header"><div><span class="eyebrow">GÓC NHÌN LẠI</span><h1>Những ngày<br><em>của riêng bạn.</em></h1><p class="hero-desc">Mỗi cảm xúc đều xứng đáng được lắng nghe.</p></div><div class="history-flower" aria-hidden="true">✿</div></div><div id="history-content"></div></section>
+    <section id="detail-page" class="page hidden"><button class="back-link" id="detail-back">← Về nhật ký</button><div id="detail-content"></div></section>
+  </main>
+  <footer><span>✿ &nbsp; một chút dịu dàng</span><span>Những gì bạn cảm thấy đều có chỗ ở đây.</span></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
